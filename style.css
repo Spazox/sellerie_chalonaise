@@ -1,0 +1,270 @@
+:root {
+  --gris-fonce: #333333;
+  --blanc-casse: #F5F5F5;
+  --cuir-beige: #B86E51;
+  --rouge-tissu: #A4322A;
+  --noir: #1C1C1C;
+}
+
+/* ======= Réinitialisation ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--blanc-casse);
+  color: var(--gris-fonce);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.logo-hero {
+  max-width: 700px;
+  width: 80%;
+  height: auto;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+/* ======= Hero ======= */
+.hero {
+  background-image: url('images/kelly-sikkema-qATevUkntlo-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(28, 28, 28, 0.6); /* assombrit l'image */
+  z-index: 1;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background-color: var(--cuir-beige);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 0 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--rouge-tissu);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: var(--gris-fonce);
+}
+
+/* ======= Prestations ======= */
+.section-prestations {
+  padding: 4rem 2rem;
+  background-color: var(--blanc-casse);
+}
+
+.section-prestations h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--rouge-tissu);
+}
+
+.section-prestations .intro {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.prestations-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.prestation {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prestation h3 {
+  margin-top: 1rem;
+  color: var(--cuir-beige);
+}
+
+/* ======= Carrousel ======= */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  max-height: 200px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  height: 200px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(28, 28, 28, 0.6);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.carousel-dots button.active {
+  background-color: var(--cuir-beige);
+}
+
+/* ======= Contact ======= */
+.section-contact {
+  padding: 4rem 2rem;
+  background-color: white;
+  color: var(--gris-fonce);
+}
+
+.section-contact h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--rouge-tissu);
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-details {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  margin-right: 10px;
+  color: var(--cuir-beige);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--rouge-tissu);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* ======= Responsive ======= */
+@media (min-width: 768px) {
+  .contact-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-details {
+    flex: 1;
+  }
+
+  .map-container {
+    flex: 1;
+  }
+}
